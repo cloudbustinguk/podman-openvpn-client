@@ -50,3 +50,9 @@ to `podman run`.
 Just execute:
 
 ```
+[dsw@box ~]$ ./stop_and_remove_pod 
+12f189b076fb7476ee2dc62c97bd2e7155f10f63b3fba5a3a177fe08c9544d7f
+12f189b076fb7476ee2dc62c97bd2e7155f10f63b3fba5a3a177fe08c9544d7f
+OpenVPN Pod is Stopped
+[dsw@box ~]$ 
+```
