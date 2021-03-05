@@ -1,0 +1,18 @@
+podman pod create --name openvpn || true
+podman run -d --pod openvpn --name vpn-client \
+  --privileged \
+  --device /dev/net/tun \
+  -v $(pwd)/conf.d:/conf.d \
+  cloudbusting-openvpn --config /conf.d/config && \
+
+echo -e '\e[1;34m'OpenVPN Pod is Running'\e[0m'
+echo =====================================================================================
+podman pod ps
+echo =====================================================================================
+echo ==== vpn-client log ====
+podman logs --tail=8 vpn-client
+echo
+echo "Start a shell in this pod, for example:"
+echo "  podman run -it --rm --pod openvpn --name my-vpn-ip centos curl -w '\n' -s https://api.my-ip.io/ip"
+echo
+

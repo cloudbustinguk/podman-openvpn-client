@@ -1,0 +1,3 @@
+podman pod stop openvpn
+podman pod rm openvpn
+echo -e '\e[1;34m'OpenVPN Pod is Stopped'\e[0m'
