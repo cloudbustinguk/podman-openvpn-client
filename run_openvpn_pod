@@ -13,6 +13,6 @@ echo ==== vpn-client log ====
 podman logs --tail=8 vpn-client
 echo
 echo "Start a shell in this pod, for example:"
-echo "  podman run -it --rm --pod openvpn --name my-vpn-ip centos curl -w '\n' -s https://api.my-ip.io/ip"
+echo "  podman exec -it vpn-client curl -w '\n' -s https://api.my-ip.io/ip"
 echo
 
