@@ -36,14 +36,14 @@ Fri Mar  5 17:03:39 2021 VERIFY OK: depth=0, O=MegaCorp, CN=MGMT.vpn.server
 Fri Mar  5 17:03:39 2021 Control Channel: TLSv1.2, cipher TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384, 2048 bit RSA
 Fri Mar  5 17:03:39 2021 [MGMT.vpn.server] Peer Connection Initiated with [AF_INET]18.123.231.123:443
 
-Start a shell in this pod, for example - to verify your VPN NAT'd IP:
-  podman run -it --rm --pod openvpn --name my-vpn-ip centos curl -w '\n' -s https://api.my-ip.io/ip
+Start a shell in this container, for example - to verify your VPN NAT'd IP:
+  podman exec -it vpn-client curl -w '\n' -s https://api.my-ip.io/ip
 
 [dsw@box ~]$
 ```
 
-3. Now you can create any container inside the VPN-enabled pod, or launch an entire workload inside it, just be sure to include `--pod openvpn`
-to `podman run`.
+3. **TODO**
+  - Make use of the pod itself and set the openvpn container up as a gateway, so that we can run an entire workload/app behind it, etc.
 
 ## Stopping
 
